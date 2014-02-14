@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'website',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -58,9 +59,16 @@ WSGI_APPLICATION = 'gingerfoodapp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'ginger.db'),
     }
 }
+
+TEMPLATE_DIRS = (
+  os.path.join(BASE_DIR, 'templates'),
+  )
+
+FACEBOOK_APP_ID = '1402112503380749'
+FACEBOOK_SECRET_KEY = 'df3f9853c7a8e3be1b8bd4e0630215a3'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/

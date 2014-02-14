@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}{{block.super}}{% endblock %}
+
+{% block main_content %}
+    {% if foodtrucks %}
+        {% for foodtruck in foodtrucks %}
+            <p>{{foodtruck}}</p>
+            <p>{{ foodtruck.name }}: {{ foodtruck.location }}</p>
+        {% endfor %}
+    {% else %}
+        <p>No food trucks for the last 30 days.</p>
+    {% endif %}
+{% endblock %}
